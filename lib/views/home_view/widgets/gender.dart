@@ -1,7 +1,9 @@
 import 'package:bmi/bmi_cubit/bmi_cubit.dart';
 import 'package:bmi/bmi_cubit/bmi_states.dart';
+import 'package:bmi/helper/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Gender extends StatelessWidget {
   const Gender({super.key, required this.gen, required this.img});
@@ -22,22 +24,25 @@ class Gender extends StatelessWidget {
                             !BlocProvider.of<BmiCubit>(context).isMale) ||
                         (gen == 'MALE' &&
                             BlocProvider.of<BmiCubit>(context).isMale))
-                    ? Colors.blueGrey
-                    : Colors.grey,
+                    ? Constants.mainColor
+                    : Constants.thirdColor,
                 borderRadius: BorderRadius.circular(16)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/$img.png',
-                  width: 70,
-                  height: 70,
-                ),
-                const SizedBox(height: 5),
+                // Image.asset(
+                //   'assets/images/$img.png',
+                //   width: 70,
+                //   height: 70,
+                // ),
+                SvgPicture.asset('assets/images/$img.svg',width: 60,height: 60,),
+                const SizedBox(height: 16),
                 Text(
                   gen,
                   style: const TextStyle(
-                      fontSize: 35, fontWeight: FontWeight.bold),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white54),
                 )
               ],
             ),

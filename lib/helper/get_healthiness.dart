@@ -6,8 +6,10 @@ String getHealthiness({required double result}) {
     healthinessString = 'Normal';
   } else if (result <= 29.9) {
     healthinessString = 'Overweight';
-  } else {
+  } else if (result <= 34.9) {
     healthinessString = 'Obese';
+  } else {
+    healthinessString = 'Extremely Obese';
   }
   return healthinessString;
 }

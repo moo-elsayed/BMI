@@ -1,3 +1,4 @@
+import 'package:bmi/helper/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -17,10 +18,10 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       heroTag: heroTag,
       onPressed: on,
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Constants.floatingActionButtonColor,
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(100),
-        borderSide: const BorderSide(color: Colors.blueGrey),
+        borderSide:  const BorderSide(color: Constants.floatingActionButtonColor),
       ),
       child: icon,
     );
